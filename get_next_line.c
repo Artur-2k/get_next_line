@@ -22,6 +22,7 @@ char	*get_next_line(int fd)
 	big_buffer = clear_buffer(big_buffer); // then we will remove all that comes before the newline
 	return (line); // we deliver the next line
 }
+
 char	*read_from_file(int fd, char *big_buffer)
 {
 	char *small_buffer;
@@ -46,7 +47,6 @@ char	*read_from_file(int fd, char *big_buffer)
 	return (big_buffer); // and return the big one
 }
 
-
 char *append_buffers(char *big_buffer, char *small_buffer)
 {
 	char *new_big_buffer;
@@ -57,6 +57,7 @@ char *append_buffers(char *big_buffer, char *small_buffer)
 	free(big_buffer); // free the old buffer
 	return (new_big_buffer); // update the big buffer
 }
+
 char	*extract_line(char *buffer)
 {
 	int			i;
@@ -66,20 +67,24 @@ char	*extract_line(char *buffer)
 	if (!buffer || !*buffer) // invalid buffer check
 		return (NULL);
 	i = 0;
-	while (buffer[i] && buffer[i] != '\n') // skip the caracters until we find a newline or a \0
-		i++;
-	line = (char *)malloc(sizeof(char) * (i + 1 + 1)); // (i + 1) chars + 1 for the null
+	while (buffer[i]) // skip the caracters until we find a newline or a \0
+	{
+		if (buffer[i++] == '\n')
+			break ;
+	}
+	line = (char *)malloc(sizeof(char) * (i + 1)); // (i + 1) chars + 1 for the null
 	if (!line) // error check
 		return (line = NULL, NULL);
-	line[i + 1] = '\0'; // null terminate it
+	line[i] = '\0'; // null terminate it
 	j = 0;
-	while (j <= i) // while i didnt copy all the indexed chars from buffer to line copy
+	while (j < i) // while i didnt copy all the indexed chars from buffer to line copy
 	{
 		line [j] = buffer[j];
 		j++;
 	}
 	return (line); // return the line
 }
+
 char	*clear_buffer(char *big_buffer)
 {
 	char *cleaned_big_buffer;
