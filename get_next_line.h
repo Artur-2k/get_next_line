@@ -1,23 +1,15 @@
-# ifndef BUFFER_SIZE
-#	define BUFFER_SIZE (5)
-# endif
-
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+
+/*				   
+ *-----------------
+ *-----INCLUDES----
+ *-----------------
+*/
 
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-
-#define TRUE (1)
-
-/*
- *-----------------
- *---BUFFER_SIZE---
- *-----------------
-*/
-
-
 
 /*
  *-----------------
@@ -36,3 +28,13 @@ char    *ft_strcalloc(size_t nitems, size_t size);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
+
+/*
+ *-----------------
+ *---BUFFER_SIZE---
+ *-----------------
+*/
+
+# ifndef BUFFER_SIZE
+#	define BUFFER_SIZE (5)
+# endif
