@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/05/13 17:54:18 by artuda-s          #+#    #+#              #
+#    Updated: 2024/05/13 17:54:51 by artuda-s         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 AR = ar rcs
 CC = gcc
 CFLAGS = -Wextra -Wall -Werror
@@ -6,7 +18,7 @@ OBJS = $(SRCS:.c=.o)
 NAME = gnllib.a
 DEPS = get_next_line.h
 
-.SILENT:
+.SILENT: 
 
 all: $(NAME)
 
