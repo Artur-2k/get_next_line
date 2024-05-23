@@ -6,11 +6,11 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:47:56 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/05/22 14:43:02 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/05/23 15:09:32 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*read_from_file(int fd, char *big_buffer);
 static char	*append_buffers(char *big_buffer, char *small_buffer);
