@@ -32,10 +32,10 @@ char	*get_next_line(int fd)
 		return (free(fd_buffer[fd]), NULL);
 	line = extract_line(fd_buffer[fd]);
 	fd_buffer[fd] = clear_buffer(fd_buffer[fd]);
-	if (*big_buffer == '\0')
+	if (*big_buffer[fd] == '\0')
 	{
-		free(big_buffer);
-		big_buffer = NULL;
+		free(big_buffer[fd]);
+		big_buffer[fd] = NULL;
 	}
 	return (line);
 }
