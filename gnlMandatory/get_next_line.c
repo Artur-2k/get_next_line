@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:47:56 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/05/23 16:59:03 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/06/08 17:36:09 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*big_buffer;
 
-	if (fd < 0 || read(fd, NULL, 0) < 0 || BUFFER_SIZE < 1)
+	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
 	if (!big_buffer)
 		big_buffer = ft_strcalloc(1, sizeof(char));
@@ -67,7 +67,7 @@ char	*append_buffers(char *big_buffer, char *small_buffer)
 {
 	char	*new_big_buffer;
 
-	new_big_buffer = strjoin(big_buffer, small_buffer);
+	new_big_buffer = ft_strjoin(big_buffer, small_buffer);
 	if (!new_big_buffer)
 		return (NULL);
 	free(big_buffer);

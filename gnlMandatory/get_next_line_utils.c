@@ -52,7 +52,7 @@ char	*ft_strcalloc(size_t nitems, size_t size)
 	return (pstr);
 }
 
-char	*strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*nstr;
 	size_t	i;
